@@ -5,10 +5,10 @@ namespace ShopOnline.Api.Data
 {
     public class ShopOnlineDbContext : DbContext
     {
-        public ShopOnlineDbContext(DbContextOptions<ShopOnlineDbContext> options) : base(options) 
+        public ShopOnlineDbContext(DbContextOptions<ShopOnlineDbContext> options) : base(options)
         {
 
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -312,5 +312,12 @@ namespace ShopOnline.Api.Data
             });
 
         }
+
+
+        public DbSet<Cart> Cart { get;set;}
+        public DbSet<CartItem> CartItem { get;set;}
+        public DbSet<Product> Product { get;set;}
+        public DbSet<ProductCategory> ProductCategory { get;set;}
+        public DbSet<User> Users { get;set;}
     }
 }
